@@ -23,4 +23,12 @@ class MyWorkTest {
         assertFalse(result);
     }
 
+    @DisplayName("Start number 1 with Include")
+    @Test
+    public void case03() {
+        MyWork myWork = new MyWork("[1,5]");
+        int result = myWork.getStartNumber();
+        assertEquals(1, result);
+    }
+
 }

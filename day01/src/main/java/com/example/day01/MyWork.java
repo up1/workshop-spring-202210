@@ -11,4 +11,8 @@ public class MyWork {
     public boolean isStartWithInclude() {
         return input.startsWith("[");
     }
+
+    public int getStartNumber() {
+        return input.charAt(1) - 48;
+    }
 }
