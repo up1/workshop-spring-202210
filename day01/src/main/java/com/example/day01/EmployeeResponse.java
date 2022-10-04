@@ -1,8 +1,23 @@
 package com.example.day01;
 
-public class EmployeeResponse{
+import java.util.Objects;
+
+public class EmployeeResponse extends Object{
 	private int id;
 	private String name;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		EmployeeResponse response = (EmployeeResponse) o;
+		return id == response.id && Objects.equals(name, response.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, name);
+	}
 
 	public EmployeeResponse aId(int id) {
 		this.id = id;
