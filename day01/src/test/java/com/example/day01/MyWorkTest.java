@@ -31,4 +31,12 @@ class MyWorkTest {
         assertEquals(1, result);
     }
 
+    @DisplayName("Start number 1 with Exclude")
+    @Test
+    public void case04() {
+        MyWork myWork = new MyWork("(1,5]");
+        int result = myWork.getStartNumber();
+        assertEquals(2, result);
+    }
+
 }

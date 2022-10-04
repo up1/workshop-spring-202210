@@ -13,6 +13,8 @@ public class MyWork {
     }
 
     public int getStartNumber() {
-        return input.charAt(1) - 48;
+        if(isStartWithInclude())
+            return input.charAt(1) - 48;
+        return input.charAt(1) - 47;
     }
 }
