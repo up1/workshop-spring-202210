@@ -39,4 +39,12 @@ class MyWorkTest {
         assertEquals(2, result);
     }
 
+    @DisplayName("[1,5] => 1,2,3,4,5")
+    @Test
+    public void case05() {
+        MyWork myWork = new MyWork("[1,5]");
+        String result = myWork.getResult();
+        assertEquals("12345", result);
+    }
+
 }
