@@ -2,11 +2,13 @@ package com.example.day01;
 
 public class MyWork {
 
-    public MyWork(String s) {
+    private final String input;
 
+    public MyWork(String input) {
+        this.input = input;
     }
 
     public boolean isStartWithInclude() {
-        return false;
+        return input.startsWith("[");
     }
 }

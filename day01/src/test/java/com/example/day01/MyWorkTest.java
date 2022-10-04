@@ -15,4 +15,12 @@ class MyWorkTest {
         assertTrue(result);
     }
 
+    @DisplayName("Start with Exclude")
+    @Test
+    public void case02() {
+        MyWork myWork = new MyWork("(1,5]");
+        boolean result = myWork.isStartWithInclude();
+        assertFalse(result);
+    }
+
 }
