@@ -19,6 +19,6 @@ class UserGatewayTest {
          Optional<UserResponse> result
                  = userGateway.getUserById(1);
          assertTrue(result.isPresent());
-         assertEquals("email", result.get().getEmail());
+         assertEquals("Sincere@april.biz", result.get().getEmail());
     }
 }
