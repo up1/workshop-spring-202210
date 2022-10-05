@@ -47,4 +47,15 @@ public class EmployeeServiceTest {
             }
         }
     }
+
+    @DisplayName("Employee Not Found with id = 3")
+    @Test
+    public void case03() {
+        when(stub.findById(3)).thenReturn(Optional.empty());
+
+        EmployeeService service = new EmployeeService(stub);
+        Exception e = assertThrows(RuntimeException.class, () ->
+                service.getData(3));
+        assertEquals("Employee not found with id=3", e.getMessage());
+    }
 }
