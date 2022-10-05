@@ -3,9 +3,11 @@ package com.example.day01;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class EmployeeService {
 
     private EmployeeRepository repository;
@@ -15,7 +17,9 @@ public class EmployeeService {
         this.repository = repository;
     }
 
+
     public EmployeeResponse getData(int id) {
+        repository.findById(id);
         Optional<Employee> result = repository.findById(id);
         if(result.isPresent()) {
             Employee employee = result.get();
