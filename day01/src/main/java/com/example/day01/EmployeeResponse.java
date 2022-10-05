@@ -1,5 +1,8 @@
 package com.example.day01;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
 
 public class EmployeeResponse extends Object{
