@@ -30,4 +30,21 @@ public class EmployeeServiceTest {
         assertEquals(1, result.getId());
         assertEquals("Demo user", result.getName());
     }
+
+    @DisplayName("Employee Not Found with id = 2")
+    @Test
+    public void case02() {
+        when(stub.findById(2)).thenReturn(Optional.empty());
+
+        EmployeeService service = new EmployeeService(stub);
+        try {
+            service.getData(2);
+            fail();
+        } catch (Exception e) {
+            if(!"Employee not found with id=2"
+                    .equals(e.getMessage())) {
+                fail();
+            }
+        }
+    }
 }
